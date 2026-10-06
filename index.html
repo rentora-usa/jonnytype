@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JonnyType</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="logo" href="index.html">jonny<span>type</span></a>
+    <nav>
+      <button class="nav-btn active" data-view="typing">typing</button>
+      <button class="nav-btn" data-view="stats">stats</button>
+      <button class="nav-btn" id="loginBtn">log in</button>
+    </nav>
+  </header>
+
+  <main class="app">
+    <section id="typingView" class="view active">
+      <div class="mode-row">
+        <div class="mode-group">
+          <button class="mode-btn active" data-time="15">15</button>
+          <button class="mode-btn" data-time="30">30</button>
+          <button class="mode-btn" data-time="60">60</button>
+              <span class="divider"></span>
+          <button class="mode-btn" data-mode="words">words</button>
+          <button class="mode-btn" data-mode="quote">quote</button>
+        </div>
+        <div class="user-mini" id="userMini">guest</div>
+      </div>
+
+      <div class="typing-card" id="typingScreen" tabindex="0" aria-label="Typing test">
+        <div class="timer" id="timer">15</div>
+        <div class="words" id="words"></div>
+        <input id="typingInput" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" aria-label="Type the words shown above">
+        <div class="hint">click here and start typing</div>
+      </div>
+
+      <div class="test-controls">
+        <button id="restartBtn" class="icon-btn" title="Restart test">↻</button>
+        <span>tab + enter to restart</span>
+      </div>
+    </section>
+
+    <section id="statsView" class="view">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">your performance</p>
+          <h1>stats</h1>
+        </div>
+        <button class="secondary-btn" id="exportBtn">export data</button>
+      </div>
+      <div class="stats-grid" id="statsGrid"></div>
+      <div class="history-card">
+        <h2>recent tests</h2>
+        <div id="history"></div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal hidden" id="authModal">
+    <div class="modal-backdrop"></div>
+    <div class="modal-card">
+      <button class="modal-close" id="closeAuth">×</button>
+      <div class="auth-logo">jonny<span>type</span></div>
+      <p class="eyebrow" id="authEyebrow">local account</p>
+      <h2 id="authTitle">log in</h2>
+      <p class="muted" id="authSubtitle">Your account is stored locally in this browser. No server required.</p>
+
+      <form id="authForm">
+        <label>username<input id="usernameInput" required maxlength="20" autocomplete="username"></label>
+        <label>password<input id="passwordInput" required type="password" minlength="4" autocomplete="current-password"></label>
+        <button class="primary-btn" type="submit" id="authSubmit">log in</button>
+      </form>
+
+      <button class="switch-auth" id="switchAuth">need an account? sign up</button>
+      <button class="danger-link hidden" id="logoutBtn">log out</button>
+    </div>
+  </div>
+
+  <div class="result-overlay hidden" id="resultOverlay">
+    <div class="result-card">
+      <p class="eyebrow">test complete</p>
+      <div class="result-wpm" id="resultWpm">0</div>
+      <div class="result-label">wpm</div>
+      <div class="result-stats">
+        <div><b id="resultAccuracy">0%</b><span>accuracy</span></div>
+        <div><b id="resultChars">0</b><span>characters</span></div>
+        <div><b id="resultErrors">0</b><span>errors</span></div>
+      </div>
+      <button class="primary-btn" id="resultRestart">try again</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>

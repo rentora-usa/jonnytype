@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JonnyType Games</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="games-body">
+  <header class="topbar">
+    <a class="logo" href="index.html">jonny<span>type</span></a>
+    <nav>
+      <a class="nav-btn active" href="games.html">games</a>
+      <a class="nav-btn" href="index.html">typing</a>
+      <span class="user-mini" id="gameUser">guest</span>
+    </nav>
+  </header>
+
+  <main class="games-app">
+    <div class="games-hero">
+      <div>
+        <p class="eyebrow">jonnytype arcade</p>
+        <h1>games.</h1>
+        <p class="muted">A clean little corner of the internet for when your homework suddenly becomes invisible.</p>
+      </div>
+      <div class="account-pill" id="accountPill">guest mode</div>
+    </div>
+
+    <div class="game-grid">
+      <article class="game-card">
+        <div class="game-icon">🟦</div>
+        <div class="game-info">
+          <h2>2048</h2>
+          <p>Slide. Combine. Pretend you meant to do that.</p>
+          <button class="primary-btn play-btn" data-game="2048">play</button>
+        </div>
+      </article>
+
+      <article class="game-card">
+        <div class="game-icon">🟩</div>
+        <div class="game-info">
+          <h2>snake</h2>
+          <p>Classic snake with a minimal JonnyType interface.</p>
+          <button class="primary-btn play-btn" data-game="snake">play</button>
+        </div>
+      </article>
+
+      <article class="game-card">
+        <div class="game-icon">⌨</div>
+        <div class="game-info">
+          <h2>typing rush</h2>
+          <p>Type as fast as you can before the clock ruins your day.</p>
+          <button class="primary-btn play-btn" data-game="typing-rush">play</button>
+        </div>
+      </article>
+
+      <article class="game-card">
+        <div class="game-icon">🎯</div>
+        <div class="game-info">
+          <h2>aim trainer</h2>
+          <p>Click targets. Improve reaction time. Become suspiciously competitive.</p>
+          <button class="primary-btn play-btn" data-game="aim">play</button>
+        </div>
+      </article>
+    </div>
+
+    <section class="saved-game-card">
+      <div>
+        <p class="eyebrow">your data</p>
+        <h2>saved locally</h2>
+        <p class="muted">Game scores are connected to the same local JonnyType account used by the typing site.</p>
+      </div>
+      <div class="saved-score" id="savedScore">0 <span>game score</span></div>
+    </section>
+
+    <div class="game-modal hidden" id="gameModal">
+      <div class="modal-backdrop"></div>
+      <div class="arcade-window">
+        <button class="modal-close" id="closeGame">×</button>
+        <div id="gameContent"></div>
+      </div>
+    </div>
+  </main>
+
+  <div class="toast" id="toast"></div>
+  <script src="games.js"></script>
+</body>
+</html>
