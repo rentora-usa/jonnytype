@@ -1,0 +1,9 @@
+export const firebaseConfig = {
+  apiKey: "",
+  authDomain: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: "",
+  appId: ""
+};
+export const firebaseEnabled = Object.values(firebaseConfig).every(Boolean);

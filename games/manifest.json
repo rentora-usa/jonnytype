@@ -1,0 +1,6 @@
+[
+  {"id":"snake","title":"Snake","description":"Classic snake with a clean JonnyType interface.","icon":"🟩","path":"games/snake/index.html"},
+  {"id":"aim-trainer","title":"Aim Trainer","description":"Click targets as quickly and accurately as you can.","icon":"🎯","path":"games/aim-trainer/index.html"},
+  {"id":"typing-rush","title":"Typing Rush","description":"Type falling words before they reach the bottom.","icon":"⌨️","path":"games/typing-rush/index.html"},
+  {"id":"2048","title":"2048","description":"Merge matching tiles and chase the highest score.","icon":"🔢","path":"games/2048/index.html"}
+]

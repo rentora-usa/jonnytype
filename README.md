@@ -1,17 +1,21 @@
 # JonnyType
 
-A no-backend Monkeytype-inspired typing site with a light UI and a hidden games area.
+Light-mode Monkeytype-inspired typing site with a hidden arcade.
 
-Files:
-- index.html - typing site
-- styles.css - shared styling
-- script.js - typing tests, local accounts, stats, export
-- games.html - clean games area
-- games.js - games + shared local account scores
+## Run
+Use a local server because the games page loads `games/manifest.json`.
 
-Run it by opening index.html in a browser or serving the folder with a local web server.
+```bash
+cd jonnytype
+python -m http.server 8000
+```
+Open http://localhost:8000
 
-Important:
-This is intentionally no-backend. Accounts and passwords are stored in localStorage, so they are NOT real secure accounts. Data is tied to the browser/device and can disappear if browser storage is cleared. Anyone who can inspect the browser storage can access it. Do not use a real password here.
+## Add games
+Create `games/my-game/index.html`, then add an entry to `games/manifest.json`. The games page automatically creates the card and Play button.
 
-The five-click easter egg is implemented on the typing screen. Five clicks within one second opens games.html.
+## Arcade
+Click the typing area 5 times within one second to open the games page.
+
+## Firebase
+`firebase-config.js` is ready for a Firebase Web App config. With blank values, the site uses local browser storage for testing. With Firebase configured, Email/Password Authentication and Firestore can store account/test data across devices. Configure Firestore Security Rules before public deployment.
